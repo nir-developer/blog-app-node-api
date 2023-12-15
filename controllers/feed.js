@@ -4,9 +4,21 @@
  */
 
 exports.getPosts = (req, res, next) => {
-  res
-    .status(200)
-    .json({ posts: [{ title: "first tltle", content: "first content" }] });
+  res.status(200).json({
+    posts: [
+      {
+        //simulate mongoose id
+        _id: 1,
+        title: "first tltle",
+        content: "first content",
+        imageUrl: "images/duck.jpg",
+        creator: {
+          name: "Nir",
+        },
+        createdAt: new Date(),
+      },
+    ],
+  });
 };
 
 exports.createPost = (req, res, next) => {
